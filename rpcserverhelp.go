@@ -519,6 +519,14 @@ var helpDescsEnUS = map[string]string{
 	"getrawtransaction--condition1": "verbose=true",
 	"getrawtransaction--result0":    "Hex-encoded bytes of the serialized transaction",
 
+	// GetTTLCmd help.
+	"getttl--synopsis": "Returns the time to live value for a spent transaction output.",
+	"getttl-txid":      "The hash of the transaction",
+	"getttl-vout":      "The index of the output",
+
+	// GetTTLResult help.
+	"getttlresult-ttl": "The time to live value for the transaction output",
+
 	// GetTxOutResult help.
 	"gettxoutresult-bestblock":     "The block hash that contains the transaction output",
 	"gettxoutresult-confirmations": "The number of confirmations",
@@ -528,7 +536,7 @@ var helpDescsEnUS = map[string]string{
 	"gettxoutresult-coinbase":      "Whether or not the transaction is a coinbase",
 
 	// GetTxOutCmd help.
-	"gettxout--synopsis":      "Returns information about an unspent transaction output..",
+	"gettxout--synopsis":      "Returns information about an unspent transaction output.",
 	"gettxout-txid":           "The hash of the transaction",
 	"gettxout-vout":           "The index of the output",
 	"gettxout-includemempool": "Include the mempool when true",
@@ -745,6 +753,7 @@ var rpcResultTypes = map[string][]interface{}{
 	"getpeerinfo":            {(*[]btcjson.GetPeerInfoResult)(nil)},
 	"getrawmempool":          {(*[]string)(nil), (*btcjson.GetRawMempoolVerboseResult)(nil)},
 	"getrawtransaction":      {(*string)(nil), (*btcjson.TxRawResult)(nil)},
+	"getttl":                 {(*btcjson.GetTTLResult)(nil)},
 	"gettxout":               {(*btcjson.GetTxOutResult)(nil)},
 	"node":                   nil,
 	"help":                   {(*string)(nil), (*string)(nil)},
